@@ -25,7 +25,11 @@ public class TestLambda {
         //2.LambdaÊ¹ÓÃ - ÉýÐò
         //list.sort((o1, o2) ->  o1.getHeight().compareTo(o2.getHeight()));
         //½µÐò
-        list.sort((o1, o2) ->  o2.getHeight().compareTo(o1.getHeight()));
+        //list.sort((o1, o2) ->  o2.getHeight().compareTo(o1.getHeight()));
+        //ÉýÐò
+        list.sort(Comparator.comparingInt(Person::getHeight));
+        //½µÐò
+        list.sort(Comparator.comparingInt(Person::getHeight).reversed());
         for (Person person : list) {
             System.out.println(person.getHeight());
         }
